@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(15*40px);
+}
+
+.tile {
+    width: 40px;
+    height: 40px;
+    background-color: greenyellow;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-image: url(img/buisson.png);
+    background-size: cover;
+}
+
+.path {
+    background-color: rgb(149, 255, 149);
+}
+
+.start {
+    background-color: rgb(6, 141, 29);
+}
+
+.treasure {
+    background-image: url(img/Treasure.png);
+    background-size: cover;
+}
+
+.border {
+    background-color: black;
+}
+
+.player {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: rgb(38, 0, 255);
+}
