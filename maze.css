@@ -7,22 +7,23 @@ body {
 .tile {
     width: 40px;
     height: 40px;
-    background-color: greenyellow;
     text-align: center;
+    background-color: rgb(228, 228, 228);
     box-sizing: border-box;
 }
 
 .wall {
-    background-image: url(img/buisson.png);
+    background-image: url(img/nuage.png);
     background-size: cover;
 }
 
 .path {
-    background-color: rgb(149, 255, 149);
+    background-color: rgb(228, 228, 228);
 }
 
 .start {
-    background-color: rgb(6, 141, 29);
+    background-image: url(img/mario.png);
+    background-size: cover;
 }
 
 .treasure {
@@ -31,7 +32,8 @@ body {
 }
 
 .border {
-    background-color: black;
+    background-image: url(img/Border.png);
+    background-size: cover;
 }
 
 .player {

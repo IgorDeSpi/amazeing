@@ -28,13 +28,17 @@ document.querySelector("body > div:nth-child(34)").appendChild(balle);
 
 let posX = 34;
 
-document.body.addEventListener("keydown", function (e) {
-    if (e.code === "ArrowRight") {
+document.body.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowRight" || e.key === 'd') {
         if (document.querySelector("body > div:nth-child("+(posX+1)+")").classList.contains('wall')) {
             console.log("You can't go through the wall Casper")
         }
         else if (document.querySelector("body > div:nth-child("+(posX+1)+")").classList.contains('border')) {
             console.log("Your papers please")
+        }
+        else if(document.querySelector("body > div:nth-child("+(posX+1)+")").classList.contains('treasure')){
+            posX++
+            alert('You have passed level 1')
         }
         else{
             posX++
@@ -42,7 +46,7 @@ document.body.addEventListener("keydown", function (e) {
             console.log(e.code)
         }
     }
-    if(e.code === "ArrowLeft"){
+    else if(e.code === "ArrowLeft" || e.key === 'q'){
         if(document.querySelector("body > div:nth-child("+(posX-1)+")").classList.contains('wall')){
             console.log("You can't go through the wall Casper")
         }
@@ -55,7 +59,7 @@ document.body.addEventListener("keydown", function (e) {
             console.log(e.code)
         }
     }
-    if(e.code === "ArrowUp"){
+    else if(e.code === "ArrowUp" || e.key === 'z'){
         if(document.querySelector("body > div:nth-child("+(posX-15)+")").classList.contains('wall')){
             console.log("You can't go through the wall Casper")
         }
@@ -68,7 +72,7 @@ document.body.addEventListener("keydown", function (e) {
             console.log(e.code)
         }
     }
-    if(e.code === "ArrowDown"){
+    else if(e.code === "ArrowDown" || e.key === 's'){
         if(document.querySelector("body > div:nth-child("+(posX+15)+")").classList.contains('wall')){
             console.log("You can't go through the wall Casper")
         }
