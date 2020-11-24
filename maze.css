@@ -1,4 +1,4 @@
-body {
+.level1 {
     display: flex;
     flex-wrap: wrap;
     width: calc(15*40px);

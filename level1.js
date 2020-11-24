@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-body.className = 'body';
+body.className = 'level1';
 
 const multiline = '----------------***********.*--*S.....**.*.T--*****.....*.*--*****.***.*.*--*****.*****.*--*****.*****.*--*****.......*--*****.*******--*.........***--*.******...**--*....********----------------';
 
@@ -85,4 +85,7 @@ document.body.addEventListener("keydown", function(e) {
             console.log(e.code)
         }
     }
+    // else if(e.key === 'r'){
+    //     document.querySelector("body > div:nth-child(34)").appendChild(balle)
+    // }
 })
