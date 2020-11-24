@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-body.className = 'level1';
+body.className = 'body';
 
 const multiline = '----------------***********.*--*S.....**.*.T--*****.....*.*--*****.***.*.*--*****.*****.*--*****.*****.*--*****.......*--*****.*******--*.........***--*.******...**--*....********----------------';
 
@@ -86,6 +86,6 @@ document.body.addEventListener("keydown", function(e) {
         }
     }
     // else if(e.key === 'r'){
-    //     document.querySelector("body > div:nth-child(34)").appendChild(balle)
+    //     document.querySelector("body > div:nth-chil")
     // }
 })

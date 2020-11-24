@@ -1,4 +1,4 @@
-.level1 {
+body {
     display: flex;
     flex-wrap: wrap;
     width: calc(15*40px);
@@ -22,8 +22,7 @@
 }
 
 .start {
-    background-image: url(img/mario.png);
-    background-size: cover;
+    background-color: rgb(83, 83, 83);
 }
 
 .treasure {
@@ -37,9 +36,10 @@
 }
 
 .player {
-    width: 20px;
-    height: 20px;
-    margin: 10px;
-    border-radius: 50%;
-    background-color: rgb(38, 0, 255);
+    background-image: url(img/mario.png);
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
