@@ -1,8 +1,11 @@
 const level2 = '-------------------------**********************--*..S.................*--********************.*--*....................*--*.********************--*...................T*-------------------------';
+
 let demarrer = true
+
 document.body.addEventListener('keydown', function (e) {
     if (e.key === "Enter" && demarrer === true) {
         demarrer = false
+        
         main.textContent = ''
         main.className = 'level2';
         for (let i = 0; i < level2.length; i++) {
@@ -27,49 +30,60 @@ document.body.addEventListener('keydown', function (e) {
 
         let posX = 53;
         let gamepad = true
+        
+
         document.body.addEventListener("keydown", function (e) {
             if (e.key === "ArrowRight" && gamepad === true || e.key === 'd' && gamepad === true) {
-                if (document.querySelector("main>div:nth-child("+(posX+1)+")").classList.contains('wall')) {
+
+                if (document.querySelector("main>div:nth-child(" + (posX + 1) + ")").classList.contains('wall')) {
                     console.log("You can't go through the wall Casper")
-                } else if (document.querySelector("main>div:nth-child("+(posX+1)+")").classList.contains('border')) {
+
+                } else if (document.querySelector("main>div:nth-child(" + (posX + 1) + ")").classList.contains('border')) {
                     console.log("Your papers please")
-                } else if (document.querySelector("main>div:nth-child("+(posX+1)+")").classList.contains('treasure')) {
+
+                } else if (document.querySelector("main>div:nth-child(" + (posX + 1) + ")").classList.contains('treasure')) {
                     posX = 26
-                    alert('You have passed level 2, press Space to go to level 3')
+                    const p = document.createElement('p')
+                    main.appendChild(p)
+                    p.textContent = "You have passed level 2, press Space to go to level 3"
+                    p.className = 'level2tolevel3'
                     gamepad = false
                 } else {
                     posX++
-                    document.querySelector("main > div:nth-child("+posX+")").appendChild(balle)
+                    document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
                     console.log(e.code)
                 }
+
             } else if (e.code === "ArrowLeft" && gamepad === true || e.key === 'q' && gamepad === true) {
-                if (document.querySelector("main > div:nth-child("+(posX-1)+")").classList.contains('wall')) {
+                if (document.querySelector("main > div:nth-child(" + (posX - 1) + ")").classList.contains('wall')) {
                     console.log("You can't go through the wall Casper")
-                } else if (document.querySelector("main > div:nth-child("+(posX-1)+")").classList.contains('border')) {
+                } else if (document.querySelector("main > div:nth-child(" + (posX - 1) + ")").classList.contains('border')) {
                     console.log("Your papers please")
                 } else {
                     posX--
-                    document.querySelector("main > div:nth-child("+posX+")").appendChild(balle)
+                    document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
                     console.log(e.code)
                 }
-            } else if (e.code === "ArrowUp" && gamepad === true|| e.key === 'z' && gamepad === true) {
-                if (document.querySelector("main > div:nth-child("+(posX-24)+")").classList.contains('wall')) {
+
+            } else if (e.code === "ArrowUp" && gamepad === true || e.key === 'z' && gamepad === true) {
+                if (document.querySelector("main > div:nth-child(" + (posX - 24) + ")").classList.contains('wall')) {
                     console.log("You can't go through the wall Casper")
-                } else if (document.querySelector("main > div:nth-child("+(posX-24)+")").classList.contains('border')) {
+                } else if (document.querySelector("main > div:nth-child(" + (posX - 24) + ")").classList.contains('border')) {
                     console.log("Your papers please")
                 } else {
                     posX -= 24
-                    document.querySelector("main > div:nth-child("+posX+")").appendChild(balle)
+                    document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
                     console.log(e.code)
                 }
-            } else if (e.code === "ArrowDown" && gamepad === true|| e.key === 's' && gamepad === true) {
-                if (document.querySelector("main > div:nth-child("+(posX+24)+")").classList.contains('wall')) {
+
+            } else if (e.code === "ArrowDown" && gamepad === true || e.key === 's' && gamepad === true) {
+                if (document.querySelector("main > div:nth-child(" + (posX + 24) + ")").classList.contains('wall')) {
                     console.log("You can't go through the wall Casper")
-                } else if (document.querySelector("main > div:nth-child("+(posX+24)+")").classList.contains('border')) {
+                } else if (document.querySelector("main > div:nth-child(" + (posX + 24) + ")").classList.contains('border')) {
                     console.log("Your papers please")
                 } else {
                     posX += 24
-                    document.querySelector("main > div:nth-child("+posX+")").appendChild(balle)
+                    document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
                     console.log(e.code)
                 }
             }

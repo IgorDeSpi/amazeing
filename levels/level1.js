@@ -35,52 +35,55 @@ let posX = 33;
 let joystick = true
 document.body.addEventListener("keydown", function (e) {
     // Pour aller à droite
-if (e.key === "ArrowRight" && joystick === true|| e.key === 'd' && joystick === true) {
-    if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('wall')) {
-        console.log("You can't go through the wall Casper")
-    } else if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('border')) {
-        console.log("Your papers please")
-    } else if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('treasure')) {
-        posX = 53
-        alert('You have passed level 1, press Enter to go to level 2')
-        joystick = false
-    } else {
-        posX++
-        document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
-        console.log(e.code)
+    if (e.key === "ArrowRight" && joystick === true || e.key === 'd' && joystick === true) {
+        if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('wall')) {
+            console.log("You can't go through the wall Casper")
+        } else if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('border')) {
+            console.log("Your papers please")
+        } else if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('treasure')) {
+            posX = 53
+            const p = document.createElement('p')
+            main.appendChild(p)
+            p.textContent = "You have passed level 1, press Enter to go to level 2"
+            p.className = 'level2tolevel3'
+            joystick = false
+        } else {
+            posX++
+            document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
+            console.log(e.code)
+        }
+        // Pour aller à gaucher
+    } else if (e.code === "ArrowLeft" && joystick === true || e.key === 'q' && joystick === true) {
+        if (document.querySelector("main > div:nth-child(" + (posX - 1) + ")").classList.contains('wall')) {
+            console.log("You can't go through the wall Casper")
+        } else if (document.querySelector("main > div:nth-child(" + (posX - 1) + ")").classList.contains('border')) {
+            console.log("Your papers please")
+        } else {
+            posX--
+            document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
+            console.log(e.code)
+        }
+        // Pour aller en haut
+    } else if (e.code === "ArrowUp" && joystick === true || e.key === 'z' && joystick === true) {
+        if (document.querySelector("main > div:nth-child(" + (posX - 15) + ")").classList.contains('wall')) {
+            console.log("You can't go through the wall Casper")
+        } else if (document.querySelector("main > div:nth-child(" + (posX - 15) + ")").classList.contains('border')) {
+            console.log("Your papers please")
+        } else {
+            posX -= 15
+            document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
+            console.log(e.code)
+        }
+        // Pour aller en bas
+    } else if (e.code === "ArrowDown" && joystick === true || e.key === 's' && joystick === true) {
+        if (document.querySelector("main > div:nth-child(" + (posX + 15) + ")").classList.contains('wall')) {
+            console.log("You can't go through the wall Casper")
+        } else if (document.querySelector("main > div:nth-child(" + (posX + 15) + ")").classList.contains('border')) {
+            console.log("Your papers please")
+        } else {
+            posX += 15
+            document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
+            console.log(e.code)
+        }
     }
-    // Pour aller à gaucher
-} else if (e.code === "ArrowLeft" && joystick === true|| e.key === 'q' && joystick === true) {
-    if (document.querySelector("main > div:nth-child(" + (posX - 1) + ")").classList.contains('wall')) {
-        console.log("You can't go through the wall Casper")
-    } else if (document.querySelector("main > div:nth-child(" + (posX - 1) + ")").classList.contains('border')) {
-        console.log("Your papers please")
-    } else {
-        posX--
-        document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
-        console.log(e.code)
-    }
-    // Pour aller en haut
-} else if (e.code === "ArrowUp" && joystick === true|| e.key === 'z' && joystick === true) {
-    if (document.querySelector("main > div:nth-child(" + (posX - 15) + ")").classList.contains('wall')) {
-        console.log("You can't go through the wall Casper")
-    } else if (document.querySelector("main > div:nth-child(" + (posX - 15) + ")").classList.contains('border')) {
-        console.log("Your papers please")
-    } else {
-        posX -= 15
-        document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
-        console.log(e.code)
-    }
-    // Pour aller en bas
-} else if (e.code === "ArrowDown" && joystick === true|| e.key === 's' && joystick === true) {
-    if (document.querySelector("main > div:nth-child(" + (posX + 15) + ")").classList.contains('wall')) {
-        console.log("You can't go through the wall Casper")
-    } else if (document.querySelector("main > div:nth-child(" + (posX + 15) + ")").classList.contains('border')) {
-        console.log("Your papers please")
-    } else {
-        posX += 15
-        document.querySelector("main > div:nth-child(" + posX + ")").appendChild(balle)
-        console.log(e.code)
-    }
-}
 })
