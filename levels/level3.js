@@ -1,6 +1,7 @@
 const level3 = `-----------********--****S***--****.***--****.***--****.***--*......*--*.****.*--*..***.*--*..***.*--**.*****--*T.*****--********-----------`
 let annule = true // Constante booléenne pour empêcher de pouvoir regénérer non stop le level 3
 
+
 document.body.addEventListener('keypress', function (e) {
     if (e.key === " " && annule === true) {
         annule = false
