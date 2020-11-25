@@ -1,5 +1,10 @@
 const body = document.querySelector('body');
 
+const explanations = document.createElement('div');
+explanations.className = 'explanations';
+body.appendChild(explanations);
+explanations.textContent = 'To move you can use the directional arrows or Z Q S D';
+
 const main = document.createElement('main');
 main.className = 'level1';
 
@@ -7,7 +12,7 @@ body.appendChild(main);
 
 const level1 =
     `----------------***********.*--*S.....**.*.T--*****.....*.*--*****.***.*.*--*****.*****.*--*****.*****.*--*****.......*--*****.*******--*.........***--*.******...**--*....********----------------`;
-
+// Boucle pour génerer le premier labyrinthe
 for (let i = 0; i < level1.length; i++) {
     const tiles = document.createElement('div');
     tiles.className = 'tile';
@@ -25,14 +30,14 @@ for (let i = 0; i < level1.length; i++) {
         tiles.className = 'tile border';
     }
 }
-
+// On définit le player
 const balle = document.createElement('div');
 balle.className = 'player';
-
+// On définit la position de player sur le premier labyrinthe
 document.querySelector("main > div:nth-child(33)").appendChild(balle);
 
 let posX = 33;
-let joystick = true
+let joystick = true //Je crée du booléen pour désactiver en suite les touches pour se déplacer pour qu'elles ne s'activent pas dans les labyrinthes suivants
 document.body.addEventListener("keydown", function (e) {
     // Pour aller à droite
     if (e.key === "ArrowRight" && joystick === true || e.key === 'd' && joystick === true) {
@@ -41,6 +46,7 @@ document.body.addEventListener("keydown", function (e) {
         } else if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('border')) {
             console.log("Your papers please")
         } else if (document.querySelector("main > div:nth-child(" + (posX + 1) + ")").classList.contains('treasure')) {
+            // Je définis que lorsque je rencontre le trésor je renvoie le player à la position du start du prochain labyrinthe
             posX = 53
             const p = document.createElement('p')
             main.appendChild(p)
