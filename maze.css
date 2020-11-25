@@ -1,7 +1,25 @@
-body {
+.body{
+    background-image: url(img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.level1 {
     display: flex;
     flex-wrap: wrap;
     width: calc(15*40px);
+}
+
+.level2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(24*40px);
+}
+
+.level3 {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(10*40px);
 }
 
 .tile {
