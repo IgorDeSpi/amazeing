@@ -4,6 +4,9 @@
     width: 300px;
     font-size: 150%;
     text-align: center;
+    font-family: cursive;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .body{
